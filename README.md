@@ -29,12 +29,12 @@ directly or via ftp. This encourages you to use your favorite editor.
  - handcrafted file manager with WYSIWYG editor
 
 ### Installation
-Composer is used for the installation so process. The `composer.json` file is
+[Composer](http://getcomposer.org/) is used for the installation so process. The `composer.json` file is
 part of the project just run composer.
 
     $ git clone git://github.com/W4RH4WK/Phoenix-Tpl.git ptpl
     $ cd ptpl
-    $ php composer install
+    $ composer install
 
 Change the url inside the `app/app.php`.
 
