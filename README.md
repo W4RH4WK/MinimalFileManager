@@ -1,5 +1,9 @@
 # Phoenix Template
 
+<p align="center">
+    <img src="data/gallery/preview.png" width="500" />
+</p>
+
 ### Description
 This projects aims to be starting template for simple web pages. It's built on
 top of the silex micro framework. Even though a file manager with editor is
