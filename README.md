@@ -28,7 +28,7 @@ directly or via ftp. This encourages you to use your favorite editor.
 Composer is used for the installation so process. The `composer.json` file is
 part of the project just run composer.
 
-    $ git clone git://github.com/W4RH4WK/phoenix-tpl.git ptpl
+    $ git clone git://github.com/W4RH4WK/Phoenix-Tpl.git ptpl
     $ cd ptpl
     $ php composer install
 
