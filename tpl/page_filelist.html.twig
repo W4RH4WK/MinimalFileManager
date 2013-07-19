@@ -1,0 +1,16 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+{{ breadcrumb|raw }}
+<div class="well well-small">
+{% for f in files %}
+{% if f.folder %}
+<i class="icon-folder-close"></i> <a href="{{ f.link }}">{{ f.name }}</a><br />
+{% else %}
+<i class="icon-file"></i> <a href="{{ f.link }}">{{ f.name }}</a><br />
+{% endif %}
+{% else %}
+<i>Folder empty</i>
+{% endfor %}
+</div>
+{% endblock %}

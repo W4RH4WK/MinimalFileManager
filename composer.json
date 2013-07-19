@@ -1,0 +1,7 @@
+{
+    "require": {
+        "silex/silex": "1.*",
+        "twig/twig": "1.*",
+        "dflydev/markdown": "1.*"
+    }
+}

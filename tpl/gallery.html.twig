@@ -1,0 +1,26 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<div id="gallery">
+    {{ breadcrumb|raw }}
+    <div class="row-fluid">
+        <div class="span2 well well-small">
+            {% for f in folders %}
+                <i class="icon-folder-close"></i> <a href="{{ f.link }}">{{ f.name }}</a><br />
+            {% endfor %}
+        </div>
+        <div class="span10" id="pictures">
+            {% for f in pics %}
+            <a href="{{ f.link }}" rel="lightbox[Gallery]" title="{{ f.name }}" rel="tooltip" data-original-title="{{ f.name }}">
+                <img src="{{ f.path_thumb }}" />
+            </a>
+            {% else %}
+                <i>Folder empty</i>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $('section #gallery #pictures a').tooltip({placement:"bottom"});
+</script>
+{% endblock %}

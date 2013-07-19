@@ -1,0 +1,31 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+<div class="row-fluid" id="blog">
+    <div class="span3" id="list">
+        <div class="accordion" id="list-accordion">
+            {% for year, entries in list %}
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#list-accordion" href="#collapse{{ year }}">{{ year }}</a>
+                    </div>
+                    <div id="collapse{{ year }}" class="accordion-body collapse">
+                        <div class="accordion-inner">
+                            {% for e in entries %}
+                                <a href="{{ e.link }}"><span class="date">{{ e.date }}</span> {{ e.name }}</a><br />
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <script type="text/javascript">
+            // open first collapse
+            $('div#blog div#list-accordion > :first-child > :first-child').next().addClass('in');
+        </script>
+    </div>
+    <div class="span9" id="entry">
+        {{ blog|raw }}
+    </div>
+</div>
+{% endblock %}
