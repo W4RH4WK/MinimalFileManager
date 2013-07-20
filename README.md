@@ -38,7 +38,7 @@ part of the project just run composer.
 
 Change the url inside the `app/app.php`.
 
-$app['url'] = 'http://example.org/';
+    $app['url'] = 'http://example.org/';
 
 Point your web server to the `web` directory.
 
@@ -47,13 +47,15 @@ All content should be kept inside the `data` folder. Some example content has
 been created for you. If you encounter problems do not hesitate looking at the
 code, I tried keeping it clean and simple.
 
+You can find the implementation code in the `app` directory.
+
 ### How to customize the navigation
 The navigation bar on top of the page is pulled from the file `data/nav.html`
 
 ### How to customize the page
 The two main files you want to look at are `tpl/layout.html.twig` and
-`web/assets/default.css`. If you want to change the component specific look,
-checkout the corresponding template inside the `tpl` folder.
+`web/assets/default.css`. If you want to change the look of a specific
+component checkout the corresponding template inside the `tpl` folder.
 
 My logo is used as placeholder in this project, just replace the files inside
 `web/assets/gfx`.
@@ -68,6 +70,10 @@ script inside the `utils` folder.
     $ php utils/usermgmt.php warhawk
 
 The first parameter is the username, it will prompt for a password.
+
+If you need additional user parameters (like email address, etc.) just add them
+to the `passwd.json` file. They should be available via
+`$app['user']->getUser()['email']`.
 
 ### How to login
 `http://example.org/user/login` upon browsing to `user/login` a login box is
