@@ -42,6 +42,23 @@ Change the url inside the `app/app.php`.
 
 Point your web server to the `web` directory.
 
+### Installation (no `web` directory)
+
+If your setup does not support pointing the entry point to a sub folder, copy
+all files from `web` into the project's root directory.
+
+    $ mv web/* .    # moves all normal files
+    $ mv web/.* .   # moves all hidden files
+    $ rmdir web     # only deletes web when it's empty
+
+The `.htaccess` file should keep all folder hidden except `assets`.
+
+Last but not least we need to change the path inside `index.php`
+
+    <?php
+    require_once __DIR__.'/app/app.php';
+    $app->run();
+
 ### How to add content
 All content should be kept inside the `data` folder. Some example content has
 been created for you. If you encounter problems do not hesitate looking at the
