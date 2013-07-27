@@ -5,9 +5,9 @@
 </p>
 
 ### Description
-This projects aims to be starting template for simple web pages. It's built on
-top of the silex micro framework. Even though a file manager with editor is
-present, the recommended way of alerting content would be handling the files
+This projects aims to be a starting template for simple web pages. It's built
+on top of the silex micro framework. Even though a file manager with editor is
+provided, the recommended way of alerting content would be handling the files
 directly or via ftp. This encourages you to use your favorite editor.
 
 ### Used Components
@@ -29,8 +29,8 @@ directly or via ftp. This encourages you to use your favorite editor.
  - handcrafted file manager with WYSIWYG editor
 
 ### Installation
-[Composer](http://getcomposer.org/) is used for the installation so process. The `composer.json` file is
-part of the project just run composer.
+[Composer](http://getcomposer.org/) is used for the installation so process.
+The `composer.json` file is part of the project just run composer.
 
     $ git clone git://github.com/W4RH4WK/Phoenix-Tpl.git ptpl
     $ cd ptpl
@@ -44,14 +44,14 @@ Point your web server to the `web` directory.
 
 ### Installation (no `web` directory)
 
-If your setup does not support pointing the entry point to a sub folder, copy
+If your setup does not support pointing the entry point to a sub folder, move
 all files from `web` into the project's root directory.
 
     $ mv web/* .    # moves all normal files
     $ mv web/.* .   # moves all hidden files
     $ rmdir web     # only deletes web when it's empty
 
-The `.htaccess` file should keep all folder hidden except `assets`.
+The `.htaccess` file should keep all folders hidden except `assets`.
 
 Last but not least we need to change the path inside `index.php`
 
@@ -64,10 +64,10 @@ All content should be kept inside the `data` folder. Some example content has
 been created for you. If you encounter problems do not hesitate looking at the
 code, I tried keeping it clean and simple.
 
-You can find the implementation code in the `app` directory.
+You can find the implementation code inside the `app` directory.
 
 ### How to customize the navigation
-The navigation bar on top of the page is pulled from the file `data/nav.html`
+The navigation bar on top of the page is pulled from the file `data/nav.html`.
 
 ### How to customize the page
 The two main files you want to look at are `tpl/layout.html.twig` and
@@ -92,12 +92,13 @@ If you need additional user parameters (like email address, etc.) just add them
 to the `passwd.json` file. They should be available via
 `$app['user']->getUser()['email']`.
 
-### How to login
-`http://example.org/user/login` upon browsing to `user/login` a login box is
+### How to login / logout
+`http://example.org/user/login`. Upon browsing to `user/login` a login box is
 shown. After entering valid credentials two new buttons should appear on the
-right side of the navigation. One of the is the logout button.
+right side of the navigation. One of them is the logout button.
 
 I already created a default user with username `root` and password `toor`.
+Please create a new user and remove this one *before* you deploy the system.
 
 ### License
 I provide assets like bootstrap and flowplayer as they are to ensure better out
