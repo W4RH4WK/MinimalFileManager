@@ -7,8 +7,6 @@
  * Markdown available, file extension has to be .md therefore.
  */
 class Page {
-    private static $default = 'me.html';
-
     public static function index($app, $page) {
         $path = __DIR__.'/../data/page/'.$page;
         $path = rtrim($path, '/');

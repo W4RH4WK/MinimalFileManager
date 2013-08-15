@@ -80,6 +80,8 @@ My logo is used as placeholder in this project, just replace the files inside
 Another way to easily customize the web page would be creating your own version
 of bootstrap and replace the content inside `web/assets/bootstrap`.
 
+The default route is set at the bottom of `app/app.php`.
+
 ### How to add a user
 All users are stored inside `data/passwd.json`. In order to add a user, use the
 script inside the `utils` folder.

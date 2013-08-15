@@ -58,7 +58,7 @@ $app->get('/gallery/{path}', function($path) use ($app) {
     return Gallery::index($app, $path);
 })->assert('path', '.*');
 
+// -------------------------------------------------- DEFAULT ROUTE
 $app->match('/', function() use ($app) {
-    require_once __DIR__.'/Blog.php';
-    return Blog::index($app, '');
+    return $app->redirect('page/about.html');
 });
