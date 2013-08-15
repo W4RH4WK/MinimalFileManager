@@ -60,5 +60,5 @@ $app->get('/gallery/{path}', function($path) use ($app) {
 
 // -------------------------------------------------- DEFAULT ROUTE
 $app->match('/', function() use ($app) {
-    return $app->redirect('page/about.html');
+    return $app->redirect('blog');
 });
