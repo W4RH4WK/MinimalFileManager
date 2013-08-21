@@ -8,15 +8,18 @@ use dflydev\markdown\MarkdownParser;
  */
 function breadcrumb($path) {
     $parts = explode('/', $path);
-    $base = array_shift($parts);
-    $html = "<li><a href=\"$base\">".ucfirst($base)."</a> <span class=\"divider\">/</span></li>\n";
-
-    foreach ($parts as $p) {
-        $base .= "/$p";
-        $html .= "<li><a href=\"$base\">$p</a> <span class=\"divider\">/</span></li>\n";
+    $html = '';
+    $link = '';
+    for ($i = 0; $i < count($parts); $i++) {
+        if ($i != count($parts) - 1) {
+            $link .= $i == 0 ? $parts[$i] : '/'.$parts[$i];
+            $html .= "<li><a href=\"$link\">".$parts[$i].'</a></li>';
+        } else {
+            $html .= '<li class="active">'.$parts[$i].'</li>';
+        }
     }
 
-    return "<ul class=\"breadcrumb\">$html</ul>";
+    return "<ol class=\"breadcrumb\">$html</ol>";
 }
 
 /**

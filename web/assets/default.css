@@ -5,8 +5,12 @@ body {
     background: #fff url(gfx/bg.png);
 }
 
-#main > nav .navbar .brand {
-    padding: 4px 10px 0px;
+#main > nav .navbar-brand {
+    padding: 9px 10px 0px;
+}
+
+#main > nav .tools {
+    padding: 8px 0px;
 }
 
 #main > .content {
@@ -22,10 +26,6 @@ body {
     margin-top: 10px;
     overflow: hidden;
     padding: 2px 5px;
-}
-
-#main > footer .row-fluid [class*="span"] {
-    min-height: 0;
 }
 
 #main > footer .author {
@@ -71,7 +71,7 @@ body {
 /* -------------------------------------------------- APPLICATION */
 /* blog */
 #main > .content #blog #list {
-    padding: 7px 0px;
+    margin-top: 20px
 }
 
 #main > .content #blog #list .date {
@@ -79,8 +79,9 @@ body {
     font-size: 11px;
 }
 
-#main > .content #blog .accordion-heading .accordion-toggle {
-    padding: 0px 15px;
+#main > .content #blog #list .panel-heading,
+#main > .content #blog #list .panel-body {
+    padding: 2px 15px;
 }
 
 /* gallery */

@@ -17,7 +17,7 @@
         <meta name="revisit-after" content="7 days">
 
         <!-- css -->
-        <link rel="stylesheet" href="assets/bootstrap/css//bootstrap.min.css" />
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" media="screen"/>
         <link rel="stylesheet" href="assets/flowplayer/skin/minimalist.css" />
         <link rel="stylesheet" href="assets/font-awesome/font-awesome.min.css" />
         <link rel="stylesheet" href="assets/lightbox/css/lightbox.css" />
@@ -32,26 +32,33 @@
     <body>
         <div id="main" class="container">
             <!-- header -->
-            <nav>
-                <div class="navbar">
-                    <div class="navbar-inner">
-                        <!-- brand -->
-                        <a class="brand" href="."><img src="assets/gfx/bpx.ico" /></a>
+            <nav class="navbar navbar-default" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main > nav .navbar-collapse">
+                        <span class="sr-only">Toggle</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-                        <!-- nav -->
-                        {% include 'nav.html' %}
+                    <!-- brand -->
+                    <a class="navbar-brand" href="."><img src="assets/gfx/bpx.ico" /></a>
+                </div>
 
-                        <!-- admin tools -->
-                        {% if app.user.isLoggedin %}
-                        <div class="tools pull-right">
-                            <a href="data" class="btn" rel="tooltip" title="File Manager"><i class="icon-folder-open"></i></a>
-                            <a href="user/logout" class="btn btn-warning" rel="tooltip" title="Logout"><i class="icon-signout"></i></a>
-                        </div>
-                        <script>
-                            $('div.tools a').tooltip({'placement':'bottom'});
-                        </script>
-                        {% endif %}
+                <div class="collapse navbar-collapse">
+                    <!-- nav -->
+                    {% include 'nav.html' %}
+
+                    <!-- admin tools -->
+                    {% if app.user.isLoggedin %}
+                    <div class="tools navbar-right">
+                        <a href="data" class="btn btn-default" rel="tooltip" title="File Manager"><i class="icon-folder-open"></i></a>
+                        <a href="user/logout" class="btn btn-warning" rel="tooltip" title="Logout"><i class="icon-signout"></i></a>
                     </div>
+                    <script>
+                        $('div.tools a').tooltip({'placement':'bottom'});
+                    </script>
+                    {% endif %}
                 </div>
             </nav>
 
@@ -60,10 +67,10 @@
 
             <!-- footer -->
             <footer>
-                <div class="row-fluid">
-                    <div class="span4 author">AUTHOR NAME HERE</div>
-                    <div class="span4 year">{{ 'now'|date('Y') }}</div>
-                    <div class="span4 legal">LEGAL NOTICE LINK HERE</div>
+                <div class="row">
+                    <div class="col-xs-4 author">AUTHOR NAME HERE</div>
+                    <div class="col-xs-4 year">{{ 'now'|date('Y') }}</div>
+                    <div class="col-xs-4 legal">LEGAL NOTICE LINK HERE</div>
                 </div>
             </footer>
 

@@ -3,19 +3,23 @@
 {% block content %}
 <div id="gallery">
     {{ breadcrumb|raw }}
-    <div class="row-fluid">
-        <div class="span2 well well-small">
-            {% for f in folders %}
+    <div class="row">
+        <div class="col-md-3">
+            <div class="well well-sm">
+                {% for f in folders %}
                 <i class="icon-folder-close"></i> <a href="{{ f.link }}">{{ f.name }}</a><br />
-            {% endfor %}
+                {% else %}
+                <i>no subfolders</i>
+                {% endfor %}
+            </div>
         </div>
-        <div class="span10" id="pictures">
+        <div class="col-md-9" id="pictures">
             {% for f in pics %}
             <a href="{{ f.link }}" rel="lightbox[Gallery]" title="{{ f.name }}" rel="tooltip" data-original-title="{{ f.name }}">
                 <img src="{{ f.path_thumb }}" />
             </a>
             {% else %}
-                <i>Folder empty</i>
+            <i>Folder empty</i>
             {% endfor %}
         </div>
     </div>

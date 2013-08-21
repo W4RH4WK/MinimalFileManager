@@ -1,14 +1,18 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-<form class="well" id="loginbox" method="post" action="user/login">
-    <input type="text" name="user" placeholder="Username" /><br />
-    <input type="password" name="pass" placeholder="Password" /><br />
-    <button type="submit" class="btn btn-primary"><i class="icon-signin"></i></button>
-</form>
-<script type="text/javascript">
-  $(document).ready(function() {
-    $('form#loginbox input:first').focus();
-  });
-</script>
+<div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+        <form id="loginbox" method="post" action="user/login">
+            <input class="form-control" type="text" name="user" placeholder="Username" /><br />
+            <input class="form-control" type="password" name="pass" placeholder="Password" /><br />
+            <button type="submit" class="btn btn-primary"><i class="icon-signin"></i></button>
+        </form>
+        <script type="text/javascript">
+          $(document).ready(function() {
+            $('form#loginbox input:first').focus();
+          });
+        </script>
+    </div>
+</div>
 {% endblock %}
