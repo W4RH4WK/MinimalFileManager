@@ -20,21 +20,24 @@ function add_msg(msg, context, type) {
  */
 function set_breadcrumb() {
   // clear
-  $('ul#breadcrumb').html('<li><a href="">data</a> <span class="divider">/</span></li>');
+  $('ol#breadcrumb').html('<li><a href="">data</a></li>');
 
   // add parts
   var parts = PATH.split('/');
-  var base = '';
+  var html = '';
+  var link = '';
   for (var i = 0; i < parts.length; i++) {
-    if (parts[i] == '')
-      continue;
-
-    base += '/' + parts[i];
-    $('ul#breadcrumb').append('<li><a href="' + base + '">' + parts[i] + '</a> <span class="divider">/</span></li>');
+    if (i != parts.length - 1) {
+      link += i == 0 ? parts[i] : '/' + parts[i];
+      html += '<li><a href="' + link + '">' + parts[i] + '</a></li>';
+    } else {
+      html += '<li class="active">' + parts[i] + '</li>';
+    }
   }
+  $('ol#breadcrumb').append(html);
 
   // register click event
-  $('ul#breadcrumb a').click(function (e) {
+  $('ol#breadcrumb a').click(function (e) {
     e.preventDefault();
     browse($(e.target).attr('href'));
   });
@@ -245,6 +248,10 @@ $('div#tools a#new-folder-button').click(function (e) {
   $('div#new input#new-type').val('folder');
   $('div#new input#new-path').val(PATH == '' ? '' : (PATH + '/'));
   $('div#new').modal('show');
+});
+
+$('div#tools a#refresh-button').click(function (e) {
+  browse(PATH);
 });
 
 $('div#tools a#clear-msgbox-button').click(function (e) {

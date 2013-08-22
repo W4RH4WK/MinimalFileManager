@@ -2,30 +2,35 @@
 
 {% block content %}
 <!-- tool box -->
-<div class="well-small" id="tools">
-    <a class="btn btn-primary" id="upload-button"><i class="icon-upload icon-white"></i> Upload</a>
-    <a class="btn" id="new-file-button"><i class="icon-file"></i> New File</a>
-    <a class="btn" id="new-folder-button"><i class="icon-folder-close"></i> New folder</a>
-    <a class="btn" id="clear-msgbox-button"><i class="icon-remove-circle"></i> Clear Messages</a>
+<div class="well-sm" id="tools">
+    <a class="btn btn-default" id="upload-button"><i class="icon-upload icon-white"></i> Upload</a>
+    <a class="btn btn-default" id="new-file-button"><i class="icon-file"></i> New File</a>
+    <a class="btn btn-default" id="new-folder-button"><i class="icon-folder-close"></i> New folder</a>
+    <a class="btn btn-default" id="refresh-button"><i class="icon-refresh"></i> Refresh</a>
+    <a class="btn btn-default" id="clear-msgbox-button"><i class="icon-remove-circle"></i> Clear Messages</a>
 </div>
 
 <!-- breadcrumb -->
-<ul class="breadcrumb" id="breadcrumb"></ul>
+<ol class="breadcrumb" id="breadcrumb"></ol>
 
 <!-- file manager view -->
 <table class="table table-hover table-condensed" id="filemanager"></table>
 
 <!-- editor -->
-<div class="hide" id="editor">
-    <div class="input-prepend input-block-level">
-        <a class="btn" id="editor-close-button"><i class="icon-remove"></i> Close</a>
-        <input type="text" name="target" id="editor-target" class="input-xxlarge" />
+<div id="editor" style="display: none;">
+    <div class="row">
+        <div class="col-xs-1">
+            <a class="btn btn-default" id="editor-close-button"><i class="icon-remove"></i> Close</a>
+        </div> 
+        <div class="col-xs-11">
+            <input type="text" name="target" id="editor-target" class="form-control" />
+        </div>
     </div>
     <textarea></textarea>
 </div>
 
 <!-- footnote -->
-<ul id="footnote" class="inline">
+<ul id="footnote" class="list-inline">
     <li><i class="icon-pencil"></i> Edit</li>
     <li><i class="icon-arrow-right"></i> Move / Rename</li>
     <li><i class="icon-remove"></i> Remove</li>
@@ -40,68 +45,86 @@
 <div id="msgbox"></div>
 
 <!-- new modal -->
-<div id="new" class="modal hide fade">
-    <div class="modal-header">
-        <h3>New</h3>
-    </div>
-    <div class="modal-body">
-        <input type="hidden" id="new-type" />
-        <input type="text" class="input-xlarge" id="new-path" />
-    </div>
-    <div class="modal-footer">
-        <a class="submit btn btn-primary" data-dismiss="modal"><i class="icon-ok"></i></a>
-        <a class="btn" data-dismiss="modal"><i class="icon-remove"></i></a>
+<div id="new" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>New</h3>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="new-type" />
+                <label for="new-path">Entry new file / folder name</label>
+                <input type="text" class="form-control" id="new-path" />
+            </div>
+            <div class="modal-footer">
+                <a class="submit btn btn-primary" data-dismiss="modal"><i class="icon-ok"></i></a>
+                <a class="btn btn-default" data-dismiss="modal"><i class="icon-remove"></i></a>
+            </div>
+        </div>
     </div>
 </div>
 
 <!-- move modal -->
-<div id="move" class="modal hide fade">
-    <div class="modal-header">
-        <h3>Move / Rename</h3>
-    </div>
-    <div class="modal-body">
-        From:<br />
-        <input type="text" class="input-xlarge" id="move-src" /><br />
-        To:<br />
-        <input type="text" class="input-xlarge" id="move-dst" />
-    </div>
-    <div class="modal-footer">
-        <a class="submit btn btn-primary" data-dismiss="modal"><i class="icon-ok"></i></a>
-        <a class="btn" data-dismiss="modal"><i class="icon-remove"></i></a>
+<div id="move" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Move / Rename</h3>
+            </div>
+            <div class="modal-body">
+                <label for="move-src">From</label>
+                <input type="text" class="form-control" id="move-src" />
+                <label for="move-dst">To</label>
+                <input type="text" class="form-control" id="move-dst" />
+            </div>
+            <div class="modal-footer">
+                <a class="submit btn btn-primary" data-dismiss="modal"><i class="icon-ok"></i></a>
+                <a class="btn btn-default" data-dismiss="modal"><i class="icon-remove"></i></a>
+            </div>
+        </div>
     </div>
 </div>
 
 <!-- remove modal -->
-<div id="remove" class="modal hide fade">
-    <div class="modal-header">
-        <h3>Remove</h3>
-    </div>
-    <div class="modal-body">
-        <input type="text" class="input-xlarge" id="remove-path" disabled /><br />
-        <small>Only empty directories can be removed.</small>
-    </div>
-    <div class="modal-footer">
-        <a class="submit btn btn-danger" data-dismiss="modal"><i class="icon-ok"></i></a>
-        <a class="btn" data-dismiss="modal"><i class="icon-remove"></i></a>
+<div id="remove" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Remove</h3>
+            </div>
+            <div class="modal-body">
+                <label for="remove-path">Remove this file / folder</label>
+                <input type="text" class="form-control" id="remove-path" disabled />
+                <p class="help-block">Only empty directories can be removed.</p>
+            </div>
+            <div class="modal-footer">
+                <a class="submit btn btn-danger" data-dismiss="modal"><i class="icon-ok"></i></a>
+                <a class="btn btn-default" data-dismiss="modal"><i class="icon-remove"></i></a>
+            </div>
+        </div>
     </div>
 </div>
 
 <!-- upload modal -->
-<div id="upload" class="modal hide fade">
-    <div class="modal-header">
-        <h3>Upload</h3>
-    </div>
-    <div class="modal-body">
-        <form method="post" enctype="multipart/form-data">
-            <input type="hidden" name="type" value="upload" />
-            <input type="hidden" name="path" id="upload-path" />
-            <input type="file" name="files[]" multiple /><br />
-            <small>You can select multiple files.</small>
-        </form>
-    </div>
-    <div class="modal-footer">
-        <a class="submit btn btn-primary" data-dismiss="modal"><i class="icon-ok"></i></a>
-        <a class="btn" data-dismiss="modal"><i class="icon-remove"></i></a>
+<div id="upload" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Upload</h3>
+            </div>
+            <div class="modal-body">
+                <form method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="type" value="upload" />
+                    <input type="hidden" name="path" id="upload-path" />
+                    <input type="file" name="files[]" multiple />
+                    <p class="help-block">You can select multiple files.</p>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a class="submit btn btn-primary" data-dismiss="modal"><i class="icon-ok"></i></a>
+                <a class="btn btn-default" data-dismiss="modal"><i class="icon-remove"></i></a>
+            </div>
+        </div>
     </div>
 </div>
 
