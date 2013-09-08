@@ -14,11 +14,11 @@ class User {
         $this->user = $app['session']->get('user', false);
     }
 
-    public function isLoggedin() {
+    public function is_loggedin() {
         return $this->user !== false;
     }
 
-    public function getUser() {
+    public function get_user() {
         return $this->user;
     }
 

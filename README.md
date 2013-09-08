@@ -92,7 +92,7 @@ The first parameter is the username, it will prompt for a password.
 
 If you need additional user parameters (like email address, etc.) just add them
 to the `passwd.json` file. They should be available via
-`$app['user']->getUser()['email']`.
+`$app['user']->get_user()['email']`.
 
 ### How to login / logout
 `http://example.org/user/login`. Upon browsing to `user/login` a login box is

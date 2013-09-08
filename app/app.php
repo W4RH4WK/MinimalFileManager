@@ -32,7 +32,7 @@ $app['user'] = new User($app);
 $app->mount('/user', User::controller($app));
 
 // -------------------------------------------------- FILEMANAGER
-if ($app['user']->isLoggedin()) {
+if ($app['user']->is_loggedin()) {
     require_once __DIR__.'/FileManager.php';
     $app->mount('/data', FileManager::controller($app));
 }

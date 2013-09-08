@@ -50,7 +50,7 @@
                     {% include 'nav.html' %}
 
                     <!-- admin tools -->
-                    {% if app.user.isLoggedin %}
+                    {% if app.user.is_loggedin %}
                     <div class="tools navbar-right">
                         <a href="data" class="btn btn-default" rel="tooltip" title="File Manager"><i class="icon-folder-open"></i></a>
                         <a href="user/logout" class="btn btn-warning" rel="tooltip" title="Logout"><i class="icon-signout"></i></a>
