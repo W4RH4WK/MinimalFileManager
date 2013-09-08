@@ -1,8 +1,8 @@
 <?php
 
 /**
- * Page is used to output static pages. It looks at the file extension to 
- * determine how the page should be rendered. If the given location is a 
+ * Page is used to output static pages. It looks at the file extension to
+ * determine how the page should be rendered. If the given location is a
  * folder, a file listing will be printed.
  * Markdown available, file extension has to be .md therefore.
  */
@@ -46,7 +46,7 @@ class Page {
         $folders = array();
         list_dir($path, $files, $folders);
         $files = array_merge($folders, $files);
- 
+
         // add link
         foreach ($files as $k => $f)
             $files[$k]['link'] = str_replace(__DIR__.'/../data/', '', $f['path']);

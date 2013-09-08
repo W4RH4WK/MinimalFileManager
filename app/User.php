@@ -1,8 +1,8 @@
 <?php
 
 /**
- * This class handles user authentication. Upon login it checks for valid 
- * credentials stored inside data/passwd.json. If the login was successful a 
+ * This class handles user authentication. Upon login it checks for valid
+ * credentials stored inside data/passwd.json. If the login was successful a
  * session cookie is created.
  */
 class User {
@@ -30,7 +30,7 @@ class User {
         // check username
         if (!array_key_exists($user, $users))
             return false;
-        
+
         // check password
         require_once __DIR__.'/helper.php';
         $hash = generate_hash($pass, $users[$user]['salt']);

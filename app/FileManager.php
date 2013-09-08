@@ -12,7 +12,7 @@ class FileManager {
     }
 
     /**
-     * returns the filemanager template with the given path set. if the path 
+     * returns the filemanager template with the given path set. if the path
      * relates to a file, the file is send to the client instead.
      */
     public static function browse($app, $path) {

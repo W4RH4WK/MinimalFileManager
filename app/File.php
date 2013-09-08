@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The File class will be used to create a dynamic file listing based upon 
+ * The File class will be used to create a dynamic file listing based upon
  * files inside the data/files folder.
  */
 class File {

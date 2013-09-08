@@ -109,7 +109,7 @@ function human_filesize($bytes, $decimals = 2) {
 }
 
 /**
- * Takes an permission value and builds a human readable unix style permission 
+ * Takes an permission value and builds a human readable unix style permission
  * string.
  * Taken from php.net.
  */

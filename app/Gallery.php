@@ -2,7 +2,7 @@
 
 /**
  * This class provides a gallery which uses the files stored in data/gallery.
- * Thumbnails will be created automatically if needed, you only need to place 
+ * Thumbnails will be created automatically if needed, you only need to place
  * the pictures.
  */
 class Gallery {

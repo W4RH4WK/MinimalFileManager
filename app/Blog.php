@@ -2,7 +2,7 @@
 
 /**
  * Blog will display blog entries ordered by date.
- * You can use markdown for your entries, just make sure the file extension 
+ * You can use markdown for your entries, just make sure the file extension
  * is .md.
  */
 class Blog {
