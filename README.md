@@ -4,10 +4,11 @@
     <img src="data/gallery/preview.png" width="500" />
 </p>
 
-### Description This is a very small file browser aimed to be integrated in
-your project. Right now this example is built on top of Silex since I develop
-it together with [Phoenix-Tpl](https://github.com/W4RH4WK/Phoenix-Tpl). This
-README will show the important files.
+### Description
+This is a very small file browser aimed to be integrated in your project. Right
+now this example is built on top of Silex since I develop it together with
+[Phoenix-Tpl](https://github.com/W4RH4WK/Phoenix-Tpl). This README will show
+the important files.
 
 ### Features
  - Browse directories

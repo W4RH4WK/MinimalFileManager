@@ -55,10 +55,10 @@ function browse(path) {
       if (result.status)
         show_content(path, result.files);
       else
-        add_msg(result.msg, 'PHP', 'alert-error');
+        add_msg(result.msg, 'PHP', 'alert-danger');
     },
     error: function (jqXHR, status) {
-      add_msg(status, 'AJAX', 'alert-error');
+      add_msg(status, 'AJAX', 'alert-danger');
     }
   });
 }
@@ -97,7 +97,7 @@ function show_content(path, files) {
             $('div#editor').show();
           },
           error: function (jqXHR, status) {
-            add_msg(status, 'AJAX', 'alert-error');
+            add_msg(status, 'AJAX', 'alert-danger');
           }
         });
       });;
@@ -153,11 +153,11 @@ $('div#new a.submit').click(function (e) {
     },
     type: 'POST',
     success: function (result) {
-      add_msg(result.msg, 'PHP', result.status ? 'alert-success' : 'alert-error');
+      add_msg(result.msg, 'PHP', result.status ? 'alert-success' : 'alert-danger');
       browse(PATH);
     },
     error: function (jqXHR, status) {
-      add_msg(status, 'AJAX', 'alert-error');
+      add_msg(status, 'AJAX', 'alert-danger');
     }
   });
 });
@@ -169,11 +169,11 @@ $('div#remove a.submit').click(function (e) {
     dataType: 'json',
     type: 'DELETE',
     success: function (result) {
-      add_msg(result.msg, 'PHP', result.status ? 'alert-success' : 'alert-error');
+      add_msg(result.msg, 'PHP', result.status ? 'alert-success' : 'alert-danger');
       browse(PATH);
     },
     error: function (jqXHR, status) {
-      add_msg(status, 'AJAX', 'alert-error');
+      add_msg(status, 'AJAX', 'alert-danger');
     }
   });
 });
@@ -190,11 +190,11 @@ $('div#move a.submit').click(function (e) {
     },
     type: 'POST',
     success: function (result) {
-      add_msg(result.msg, 'PHP', result.status ? 'alert-success' : 'alert-error');
+      add_msg(result.msg, 'PHP', result.status ? 'alert-success' : 'alert-danger');
       browse(PATH);
     },
     error: function (jqXHR, status) {
-      add_msg(status, 'AJAX', 'alert-error');
+      add_msg(status, 'AJAX', 'alert-danger');
     }
   });
 });
@@ -210,12 +210,12 @@ $('div#upload a.submit').click(function (e) {
     type: 'POST',
     success: function (result) {
       $('div#progress').hide();
-      add_msg(result.msg, 'PHP', result.status ? 'alert-success' : 'alert-error');
+      add_msg(result.msg, 'PHP', result.status ? 'alert-success' : 'alert-danger');
       browse(PATH);
     },
     error: function (jqXHR, status) {
       $('div#progress').hide();
-      add_msg(status, 'AJAX', 'alert-error');
+      add_msg(status, 'AJAX', 'alert-danger');
     },
     xhr: function() {
       var x = $.ajaxSettings.xhr();

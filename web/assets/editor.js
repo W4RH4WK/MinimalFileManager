@@ -13,10 +13,10 @@ $('div#editor textarea').ckeditor(function (textarea) {
       },
       type: 'POST',
       success: function (result) {
-        add_msg(result.msg, 'PHP', result.status ? 'alert-success' : 'alert-error');
+        add_msg(result.msg, 'PHP', result.status ? 'alert-success' : 'alert-danger');
       },
       error: function (jqXHR, status) {
-        add_msg(status, 'AJAX', 'alert-error');
+        add_msg(status, 'AJAX', 'alert-danger');
       }
     });
   };
