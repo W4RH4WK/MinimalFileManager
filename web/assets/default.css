@@ -5,39 +5,10 @@ body {
     background: #fff url(gfx/bg.png);
 }
 
-#main > nav .navbar-brand {
-    padding: 9px 10px 0px;
-}
-
-#main > nav .tools {
-    padding: 8px 0px;
-}
-
 #main > .content {
     background-color: #fdfdfd;
     border: solid thin #d4d4d4;
     padding: 3px 10px;
-}
-
-#main > footer {
-    background-color: #fdfdfd;
-    border: solid thin #d4d4d4;
-    font-size: 11px;
-    margin-top: 10px;
-    overflow: hidden;
-    padding: 2px 5px;
-}
-
-#main > footer .author {
-    text-align: left;
-}
-
-#main > footer .year {
-    text-align: center;
-}
-
-#main > footer .legal {
-    text-align: right;
 }
 
 /* -------------------------------------------------- LOGO */
@@ -66,48 +37,4 @@ body {
 #main > .links img:hover {
     filter: alpha(opacity=100);
     opacity: 1.0;
-}
-
-/* -------------------------------------------------- APPLICATION */
-/* blog */
-#main > .content #blog #list {
-    margin-top: 20px
-}
-
-#main > .content #blog #list .date {
-    font-family: "Courier New", Courier, monospace;
-    font-size: 11px;
-}
-
-#main > .content #blog #list .panel-heading,
-#main > .content #blog #list .panel-body {
-    padding: 2px 15px;
-}
-
-/* gallery */
-#main > .content #gallery #pictures a {
-    -moz-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
-    -moz-transition: all 0.2s ease-out;
-    -ms-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
-    -webkit-transition: all 0.2s ease-out;
-    background: rgba(255, 255, 255, 0.1);
-    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.5);
-    display: inline-table;
-    line-height: 1em;
-    margin-bottom: 32px;
-    margin-left: 12px;
-    margin-right: 12px;
-    padding: 7px;
-    transition: all 0.2s ease-out;
-}
-
-#main > .content #gallery #pictures a:hover {
-    background-color: #08c;
-}
-
-/* login logout */
-#main > .content #loginbox {
-    text-align: center;
 }

@@ -1,7 +1,5 @@
 <?php
 
-use dflydev\markdown\MarkdownParser;
-
 /**
  * returns html to build a breadcrumb based upon path.
  * path should look like this: page/subdir/gfx
@@ -42,13 +40,6 @@ function list_dir($path, &$files, &$folders) {
             $files[] = $file;
         }
     }
-}
-
-/**
- * convert markdown to html.
- */
-function md_to_html($md) {
-    return (new MarkdownParser())->transformMarkdown($md);
 }
 
 /**

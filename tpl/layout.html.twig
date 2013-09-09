@@ -2,85 +2,33 @@
 <html lang="en">
     <head>
         <!-- title -->
-        <title>Phoenix Template</title>
-
-        <!-- favicon -->
-        <link rel="shortcut icon" href="assets/gfx/bpx.ico" type="image/ico" />
+        <title>File Manager</title>
 
         <!-- base -->
         <base href="{{ app.url }}" />
 
         <!-- meta -->
         <meta charset="UTF-8">
-        <meta name="author" content="INSERT AUTHOR HERE">
-        <meta name="robots" content="index, follow">
-        <meta name="revisit-after" content="7 days">
 
         <!-- css -->
         <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" media="screen"/>
-        <link rel="stylesheet" href="assets/flowplayer/skin/minimalist.css" />
         <link rel="stylesheet" href="assets/font-awesome/font-awesome.min.css" />
-        <link rel="stylesheet" href="assets/lightbox/css/lightbox.css" />
         <link rel="stylesheet" href="assets/default.css" />
 
         <!-- js -->
         <script src="assets/jquery.js"></script>
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="assets/lightbox/js/lightbox-2.6.min.js"></script>
-        <script src="assets/flowplayer/flowplayer.min.js"></script>
     </head>
     <body>
         <div id="main" class="container">
-            <!-- header -->
-            <nav class="navbar navbar-default" role="navigation">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main > nav .navbar-collapse">
-                        <span class="sr-only">Toggle</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- brand -->
-                    <a class="navbar-brand" href="."><img src="assets/gfx/bpx.ico" /></a>
-                </div>
-
-                <div class="collapse navbar-collapse">
-                    <!-- nav -->
-                    {% include 'nav.html' %}
-
-                    <!-- admin tools -->
-                    {% if app.user.is_loggedin %}
-                    <div class="tools navbar-right">
-                        <a href="data" class="btn btn-default" rel="tooltip" title="File Manager"><i class="icon-folder-open"></i></a>
-                        <a href="user/logout" class="btn btn-warning" rel="tooltip" title="Logout"><i class="icon-signout"></i></a>
-                    </div>
-                    <script>
-                        $('div.tools a').tooltip({'placement':'bottom'});
-                    </script>
-                    {% endif %}
-                </div>
-            </nav>
-
             <!-- content -->
             <section class="content">{% block content %}{% endblock %}</section>
-
-            <!-- footer -->
-            <footer>
-                <div class="row">
-                    <div class="col-xs-4 author">AUTHOR NAME HERE</div>
-                    <div class="col-xs-4 year">{{ 'now'|date('Y') }}</div>
-                    <div class="col-xs-4 legal">LEGAL NOTICE LINK HERE</div>
-                </div>
-            </footer>
 
             <!-- links -->
             <section class="links">
                 <a href="http://jquery.com" rel="tooltip" title="JQuery"><img src="assets/gfx/jquery.png" alt="JQuery" /></a>
                 <a href="http://twitter.github.com/bootstrap/index.html" rel="tooltip" title="Twitter Bootstrap"><img src="assets/gfx/bootstrap.ico" alt="Bootstrap" /></a>
                 <a href="http://fortawesome.github.com/Font-Awesome" rel="tooltip" title="Font Awesome"><img src="assets/gfx/fontawesome.ico" alt="Font Awesome" /></a>
-                <a href="http://lokeshdhakar.com/projects/lightbox2" rel="tooltip" title="Lightbox"><img src="assets/gfx/lightbox.gif" alt="Lightbox 2" /></a>
-                <a href="http://flowplayer.org" rel="tooltip" title="Flowplayer"><img src="assets/gfx/flowplayer.ico" alt="Flowplayer" /></a>
                 <a href="http://ckeditor.com" rel="tooltip" title="CKEditor"><img src="assets/gfx/ckeditor.ico" alt="CKEditor" /></a>
             </section>
             <script>
